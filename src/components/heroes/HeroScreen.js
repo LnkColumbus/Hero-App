@@ -1,6 +1,9 @@
 import React, { useMemo } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
+import { heroesImages } from '../../helpers/heroesImages';
 import { getHeroesById } from '../../selectors/getHeroesById';
+
+// import { batman } from '../../assets/heroes/dc-batman.jpg'; // estático
 
 export const HeroScreen = ({ history }) => {
 
@@ -28,7 +31,9 @@ export const HeroScreen = ({ history }) => {
         <div className="row mt-5">
             <div className="col-4">
                 <img
-                    src={ `../assets/heroes/${ heroId }.jpg` }
+                    // src={ `../assets/heroes/${ heroId }.jpg` }
+                    // src={ batman } // import
+                    src={ heroesImages( `./${ heroId }.jpg` ).default }
                     alt={ superhero }
                     className="img-thumbnail animate__animated animate__fadeInLeft"
                 />
